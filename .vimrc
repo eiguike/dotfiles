@@ -11,6 +11,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'git://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'git://github.com/scrooloose/nerdtree.git'
+Plugin 'fatih/vim-go'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 call vundle#end()
