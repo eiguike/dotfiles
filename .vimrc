@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'git://github.com/terryma/vim-multiple-cursors.git'
+Plugin 'git://github.com/scrooloose/nerdtree.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 call vundle#end()
@@ -34,3 +35,11 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab " idents as spaces
+set tags+=./tags;
+set tags+=~/go/src/tags
+set nowrap
+
+map <Leader>n :NERDTreeToggle<CR>
+
+" Clipboard for Mac OS X
+set clipboard=unnamed
