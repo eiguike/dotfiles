@@ -39,6 +39,7 @@ set expandtab " idents as spaces
 set tags+=./tags;
 set tags+=~/go/src/tags
 set nowrap
+set hlsearch
 
 map <Leader>n :NERDTreeToggle<CR>
 
