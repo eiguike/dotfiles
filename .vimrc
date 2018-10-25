@@ -8,10 +8,10 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'git://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'git://github.com/scrooloose/nerdtree.git'
-Plugin 'fatih/vim-go'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 call vundle#end()
@@ -37,7 +37,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab " idents as spaces
 set tags+=./tags;
-set tags+=~/go/src/tags
+" set tags+=~/go/src/tags
 set nowrap
 set hlsearch
 
