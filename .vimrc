@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
-Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'git@github.com:ctrlpvim/ctrlp.vim.git' 
 Plugin 'git://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -45,3 +45,5 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Clipboard for Mac OS X
 set clipboard=unnamed
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
