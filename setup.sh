@@ -1,8 +1,8 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt upgrade
-sudo apt install vim-gnome build-essential git curl zsh tmux
+sudo apt upgrade -y
+sudo apt install -y vim-gnome build-essential git curl zsh tmux
 
 # Configuring vim
 mkdir ~/Documents/git
@@ -26,7 +26,7 @@ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Installing Docker
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -44,7 +44,7 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # Instal docker-compose
 sudo curl -L "https://github.com/dovker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
