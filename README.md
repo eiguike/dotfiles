@@ -1,5 +1,7 @@
 # Dotfiles
 
 ```sh
-curl -sSL https://github.com/eiguike/dotfiles/setup.sh | bash
+wget https://github.com/eiguike/dotfiles/raw/master/setup.sh
+chmod +x setup.sh
+./setup.sh
 ```

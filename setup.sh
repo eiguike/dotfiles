@@ -6,7 +6,7 @@ sudo apt install -y vim-gnome build-essential git curl zsh tmux
 
 # Configuring vim
 mkdir ~/Documents/git
-git clone https://github.com/eiguike/dotfiles.git ~/Documents/git
+git clone https://github.com/eiguike/dotfiles.git ~/Documents/git/dotfiles
 
 cp -r ~/Documents/git/dotfiles/.vim ~
 cp ~/Documents/git/dotfiles/.vimrc ~/.vimrc
