@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 sudo apt update
 sudo apt install -y \
   vim-gnome build-essential git curl zsh tmux arandr cmake virtualbox # my programs
