@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y vim-gnome build-essential git curl zsh tmux
+sudo apt install -y vim-gnome build-essential git curl zsh tmux arandr
 
 # Configuring vim
 mkdir ~/Documents/git
@@ -13,9 +13,9 @@ cp -r ~/Documents/git/dotfiles/.vim ~
 cp ~/Documents/git/dotfiles/.vimrc ~/.vimrc
 cp ~/Documents/git/dotfiles/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
 
-vim -c ":PluginInstall"
+vim -c ":PluginInstall" -c ":q" -c ":q"
 
-# Installing zsh
+# Installing oh-my-zshell
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sudo bash
 
 # Installing RVM
