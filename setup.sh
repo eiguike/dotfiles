@@ -12,6 +12,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cp -r ~/Documents/git/dotfiles/.vim ~
 cp ~/Documents/git/dotfiles/.vimrc ~/.vimrc
+cp ~/Documents/git/dotfiles/.ctags ~/.ctags
 
 vim -c ":PluginInstall" -c ":q" -c ":q"
 
