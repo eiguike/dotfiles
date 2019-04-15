@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 sudo apt update
 sudo apt install -y \
   vim-gnome build-essential git curl zsh tmux arandr cmake virtualbox # my programs
@@ -13,6 +12,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp -r ~/Documents/git/dotfiles/.vim ~
 cp ~/Documents/git/dotfiles/.vimrc ~/.vimrc
 cp ~/Documents/git/dotfiles/.ctags ~/.ctags
+cp ~/Documents/git/dotfiles/.git* ~/
 
 vim -c ":PluginInstall" -c ":q" -c ":q"
 
