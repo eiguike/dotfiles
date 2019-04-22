@@ -24,7 +24,8 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y \
-  yarn nodejs # node js
+  yarn nodejs \
+  golang-go
 
 # Set shortcuts
 cp ~/Documents/git/dotfiles/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
@@ -33,7 +34,10 @@ cp ~/Documents/git/dotfiles/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/
 curl -sSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
 
 # Installing RVM
+curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 curl -sSL https://get.rvm.io | bash -s stable --ruby
+source /home/$USER/.rvm/scripts/rvm
 
 # Installing NodeJs
 curl -sSL https://deb.nodesource.com/setup_11.x | sudo -E bash -
@@ -43,14 +47,10 @@ sudo curl -L "https://github.com/dovker/compose/releases/download/1.23.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-# Installing golang
-sudo apt update
-sudo apt install golang-go
-
-echo "export GOPATH=$HOME/go-workspace" >> ~/.bashrc
+echo "export GOPATH=\$HOME/go-workspace" >> ~/.bashrc
 echo "export GOROOT=/usr/local/opt/go/libexec" >> ~/.bashrc
-echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
-echo "export PATH=$PATH:$GOROOT/bin" >> ~/.bashrc
+echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.bashrc
+echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.bashrc
 
 clear
 echo "Please reboot your machine..."
