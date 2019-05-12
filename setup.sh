@@ -47,10 +47,15 @@ sudo curl -L "https://github.com/dovker/compose/releases/download/1.23.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+# Create permission to use docker
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+
 echo "export GOPATH=\$HOME/go-workspace" >> ~/.bashrc
 echo "export GOROOT=/usr/local/opt/go/libexec" >> ~/.bashrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.bashrc
 echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.bashrc
+echo "zsh" >> ~/.bashrc
 
 clear
 echo "Please reboot your machine..."
