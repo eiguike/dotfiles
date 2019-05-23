@@ -7,6 +7,7 @@ sudo apt install -y \
 
 # Configuring vim
 mkdir ~/Documents/git
+mkdir ~/Documents/git/go
 git clone https://github.com/eiguike/dotfiles.git ~/Documents/git/dotfiles
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -25,8 +26,12 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y \
-  yarn nodejs \
-  golang-go
+  yarn nodejs
+
+# Installing golang
+wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.12.5.linux-amd64.tar.gz
+rm go1.12.5.linux-amd64.tar.gz
 
 # Set shortcuts
 cp ~/Documents/git/dotfiles/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/
@@ -52,8 +57,8 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo groupadd docker
 sudo gpasswd -a $USER docker
 
-echo "export GOPATH=\$HOME/go-workspace" >> ~/.bashrc
-echo "export GOROOT=/usr/local/opt/go/libexec" >> ~/.bashrc
+echo "export GOPATH=\$HOME/Documents/git/go" >> ~/.bashrc
+echo "export GOROOT=/usr/local/go" >> ~/.bashrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.bashrc
 echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.bashrc
 echo "zsh" >> ~/.bashrc
