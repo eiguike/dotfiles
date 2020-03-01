@@ -13,6 +13,7 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/ludovicchabant/vim-gutentags.git'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 call vundle#end()
