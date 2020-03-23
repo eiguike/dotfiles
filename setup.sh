@@ -1,5 +1,6 @@
 #!/bin/bash
 
+########################################
 # Installing essentials programs
 sudo apt-get update
 sudo apt-get install -y \
@@ -7,6 +8,15 @@ sudo apt-get install -y \
   zsh tmux arandr cmake virtualbox \
   ctags ack-grep libssl-dev libreadline-dev \
   zlib1g-dev
+########################################
+
+########################################
+# Configuiring git
+echo "your email for git: "
+read git_config_user_email
+git config --global user.email $git_config_user_email
+git config --global user.name "rick"
+########################################
 
 ########################################
 # Linking and Moving configuration files
@@ -70,6 +80,15 @@ echo "export GOPATH=\$HOME/Documents/git/go" >> ~/.zshrc
 echo "export GOROOT=/usr/local/go" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.zshrc
+
+
+########################################
+# Generating asymmetric keys
+echo "Generating a SSH Key..."
+ssh-keygen -t rsa -b 4096 -C $git_config_user_email
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
+########################################
 
 clear
 echo "Please reboot your machine..."
