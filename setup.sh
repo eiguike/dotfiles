@@ -7,7 +7,7 @@ sudo apt-get install -y \
   vim-gnome build-essential git curl \
   zsh tmux arandr cmake virtualbox \
   ctags ack-grep libssl-dev libreadline-dev \
-  zlib1g-dev
+  zlib1g-dev xclip
 ########################################
 
 ########################################
