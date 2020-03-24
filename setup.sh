@@ -1,19 +1,19 @@
 #!/bin/bash
 
+echo "your email for git: "
+read git_config_user_email
+
 ########################################
 # Installing essentials programs
 sudo apt-get update
 sudo apt-get install -y \
-  vim-gnome build-essential git curl \
-  zsh tmux arandr cmake virtualbox \
-  ctags ack-grep libssl-dev libreadline-dev \
+  vim-gnome build-essential git curl zsh tmux arandr \
+  cmake virtualbox ctags ack-grep libssl-dev libreadline-dev \
   zlib1g-dev xclip
 ########################################
 
 ########################################
 # Configuiring git
-echo "your email for git: "
-read git_config_user_email
 git config --global user.email $git_config_user_email
 git config --global user.name "rick"
 ########################################
@@ -50,6 +50,19 @@ curl -fsSL https://get.docker.com | bash
 sudo groupadd docker
 sudo gpasswd -a $USER docker
 sudo usermod -aG docker $(whoami)
+########################################
+
+########################################
+# Installing Docker-Compose
+
+DC_LATEST_VERSION=$(curl --silent \
+  "https://api.github.com/repos/docker/compose/releases/latest" \
+  | grep '"tag_name":' \
+  | sed -E 's/.*"([^"]+)".*/\1/')
+
+sudo curl -L "https://github.com/docker/compose/releases/download/$(DC_LATEST_VERSION)/docker-compose-$(uname -s)-$(uname -m)" \
+  -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ########################################
 
 ########################################
