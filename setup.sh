@@ -9,7 +9,7 @@ sudo apt-get update
 sudo apt-get install -y \
   vim-gnome build-essential git curl zsh tmux arandr \
   cmake virtualbox ctags ack-grep libssl-dev libreadline-dev \
-  zlib1g-dev xclip
+  zlib1g-dev xclip ripgrep
 ########################################
 
 ########################################
@@ -39,7 +39,13 @@ ln -s $(pwd)/Documents/git/dotfiles/.gitconfig $(pwd)/.gitconfig
 ln -s $(pwd)/Documents/git/dotfiles/.gitignore $(pwd)/.gitignore
 ln -s $(pwd)/Documents/git/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 
+# Installing fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 vim -c ":PluginInstall" -c ":q" -c ":q"
+vim -c ":call coc#util#install()" -c ":q"
+vim -c ":CocInstall coc-tsserver coc-json" -c ":q"
 ########################################
 
 ########################################
@@ -93,6 +99,7 @@ echo "export GOPATH=\$HOME/Documents/git/go" >> ~/.zshrc
 echo "export GOROOT=/usr/local/go" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.zshrc
+echo "export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'" >> ~/.zshrc
 
 
 ########################################

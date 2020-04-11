@@ -1,5 +1,2 @@
 [core]
 	excludesfile = ~/.gitignore
-[user]
-	email = rick.eihara@gmail.com
-	name = Henrique
