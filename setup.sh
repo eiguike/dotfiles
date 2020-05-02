@@ -7,7 +7,7 @@ read git_config_user_email
 # Installing essentials programs
 sudo apt-get update
 sudo apt-get install -y \
-  vim-gnome build-essential git curl zsh tmux arandr \
+  vim-gtk build-essential git curl zsh tmux arandr \
   cmake virtualbox ctags ack-grep libssl-dev libreadline-dev \
   zlib1g-dev xclip ripgrep
 ########################################
