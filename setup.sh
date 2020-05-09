@@ -18,6 +18,30 @@ git config --global user.email $git_config_user_email
 git config --global user.name "rick"
 ########################################
 
+#######################################
+# Installing asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+cd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"
+
+echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zshrc
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+# Installing asdf-ruby
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf install ruby 2.6.3
+asdf global ruby 2.6.3
+
+# Installing asdf-node
+asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+asdf install nodejs 12.16.3
+asdf global nodejs 12.16.3
+#######################################
+
 ########################################
 # Linking and Moving configuration files
 cd ~
@@ -77,30 +101,11 @@ curl -sSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/
 echo "zsh" >> ~/.bashrc
 ########################################
 
-#######################################
-# Installing asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-cd ~/.asdf
-git checkout "$(git describe --abbrev=0 --tags)"
-
-echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zshrc
-echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc
-
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-# Installing asdf-ruby
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 2.6.3
-asdf global ruby 2.6.3
-#######################################
-
 echo "export GOPATH=\$HOME/Documents/git/go" >> ~/.zshrc
 echo "export GOROOT=/usr/local/go" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
 echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.zshrc
 echo "export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'" >> ~/.zshrc
-
 
 ########################################
 # Generating asymmetric keys
