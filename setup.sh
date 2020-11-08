@@ -78,8 +78,7 @@ curl -fsSL https://get.docker.com | bash
 
 # Create permission to use docker
 sudo groupadd docker
-sudo gpasswd -a $USER docker
-sudo usermod -aG docker $(whoami)
+sudo usermod -aG docker $USER
 ########################################
 
 ########################################
@@ -90,7 +89,7 @@ DC_LATEST_VERSION=$(curl --silent \
   | grep '"tag_name":' \
   | sed -E 's/.*"([^"]+)".*/\1/')
 
-sudo curl -L "https://github.com/docker/compose/releases/download/$(DC_LATEST_VERSION)/docker-compose-$(uname -s)-$(uname -m)" \
+sudo curl -L "https://github.com/docker/compose/releases/download/$DC_LATEST_VERSION/docker-compose-$(uname -s)-$(uname -m)" \
   -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ########################################
