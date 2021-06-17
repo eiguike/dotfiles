@@ -9,7 +9,7 @@ sudo apt-get update
 sudo apt-get install -y \
   vim-gtk build-essential git curl zsh tmux arandr \
   cmake virtualbox ack-grep libssl-dev libreadline-dev \
-  zlib1g-dev xclip ripgrep
+  zlib1g-dev xclip ripgrep neovim
 ########################################
 
 ########################################
@@ -44,14 +44,14 @@ echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc
 
 # Installing asdf-ruby
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 2.6.3
-asdf global ruby 2.6.3
+asdf install ruby 3.0.1
+asdf global ruby 3.0.1
 
 # Installing asdf-node
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 12.16.3
-asdf global nodejs 12.16.3
+asdf install nodejs 14.17.1
+asdf global nodejs 14.17.1
 #######################################
 
 ########################################
@@ -66,10 +66,11 @@ ln -s $(pwd)/Documents/git/dotfiles/terminalrc $(pwd)/.config/xfce4/terminal/ter
 # Configuring vim
 mkdir ~/Documents/git
 git clone https://github.com/eiguike/dotfiles.git ~/Documents/git/dotfiles
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-cp -r ~/Documents/git/dotfiles/.vim ~
-ln -s $(pwd)/Documents/git/dotfiles/.vimrc $(pwd)/.vimrc
+mkdir $(pwd)/.config/nvim
+ln -s $(pwd)/Documents/git/dotfiles/.vimrc $(pwd)/.config/nvim/init.vim
 ln -s $(pwd)/Documents/git/dotfiles/.ctags $(pwd)/.ctags
 ln -s $(pwd)/Documents/git/dotfiles/.gitconfig $(pwd)/.gitconfig
 ln -s $(pwd)/Documents/git/dotfiles/.gitignore $(pwd)/.gitignore
@@ -79,9 +80,11 @@ ln -s $(pwd)/Documents/git/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-vim -c ":PluginInstall" -c ":q" -c ":q"
-vim -c ":call coc#util#install()" -c ":q"
-vim -c ":CocInstall coc-tsserver coc-json" -c ":q"
+nvim -c ":PlugInstall" -c ":q" -c ":q"
+nvim -c ":call coc#util#install()" -c ":q"
+nvim -c ":CocInstall coc-tsserver coc-json" -c ":q"
+
+cat ~/.vim/.cocnvim_conf >> ~/Documents/git/dotfiles/.vimrc
 ########################################
 
 ########################################
@@ -109,7 +112,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ########################################
 # Generating asymmetric keys
 echo "Generating a SSH Key..."
-ssh-keygen -t rsa -b 4096 -C $git_config_user_email
+ssh-keygen -t rsa -b 4096 -C $git_config_user_email -N '' -f ~/.ssh/id_rsa <<< y 
 ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
 ########################################

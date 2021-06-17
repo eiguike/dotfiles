@@ -3,30 +3,28 @@ set nocompatible
 syntax enable
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mileszs/ack.vim'
-Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'https://github.com/ludovicchabant/vim-gutentags.git'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
+Plug 'https://github.com/terryma/vim-multiple-cursors.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " fzf plugins
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Javascript plugins
-Plugin 'sheerun/vim-polyglot'
-Plugin 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 
 " Code completion
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 set path+=**
