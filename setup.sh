@@ -8,7 +8,7 @@ read git_config_user_email
 sudo apt-get update
 sudo apt-get install -y \
   vim-gtk build-essential git curl zsh tmux arandr \
-  cmake virtualbox ctags ack-grep libssl-dev libreadline-dev \
+  cmake virtualbox ack-grep libssl-dev libreadline-dev \
   zlib1g-dev xclip ripgrep
 ########################################
 
@@ -17,6 +17,18 @@ sudo apt-get install -y \
 git config --global user.email $git_config_user_email
 git config --global user.name "rick"
 ########################################
+
+########################################
+# Installing oh-my-zshell
+curl -sSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
+echo "zsh" >> ~/.bashrc
+########################################
+
+echo "export GOPATH=\$HOME/Documents/git/go" >> ~/.zshrc
+echo "export GOROOT=/usr/local/go" >> ~/.zshrc
+echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
+echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.zshrc
+echo "export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'" >> ~/.zshrc
 
 #######################################
 # Installing asdf
@@ -93,18 +105,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$DC_LATEST_VER
   -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ########################################
-
-########################################
-# Installing oh-my-zshell
-curl -sSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
-echo "zsh" >> ~/.bashrc
-########################################
-
-echo "export GOPATH=\$HOME/Documents/git/go" >> ~/.zshrc
-echo "export GOROOT=/usr/local/go" >> ~/.zshrc
-echo "export PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
-echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.zshrc
-echo "export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'" >> ~/.zshrc
 
 ########################################
 # Generating asymmetric keys
