@@ -7,7 +7,7 @@ read git_config_user_email
 # Installing essentials programs
 sudo apt-get update
 sudo apt-get install -y \
-  vim-gtk build-essential git curl zsh tmux arandr \
+  build-essential git curl zsh tmux arandr \
   cmake virtualbox ack-grep libssl-dev libreadline-dev \
   zlib1g-dev xclip ripgrep neovim
 ########################################
@@ -60,6 +60,7 @@ cd ~
 rm $(pwd)/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 rm $(pwd)/.config/xfce4/terminal/terminalrc
 
+ln -s $(pwd)/Documents/git/dotfiles/keyboards.xml $(pwd)/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml
 ln -s $(pwd)/Documents/git/dotfiles/xfce4-keyboard-shortcuts.xml $(pwd)/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 ln -s $(pwd)/Documents/git/dotfiles/terminalrc $(pwd)/.config/xfce4/terminal/terminalrc
 
