@@ -78,13 +78,13 @@ ln -s $(pwd)/Documents/git/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 
 # Installing fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install <<< \n\n
 
 nvim -c ":PlugInstall" -c ":q" -c ":q"
 nvim -c ":call coc#util#install()" -c ":q"
 nvim -c ":CocInstall coc-tsserver coc-json" -c ":q"
 
-cat ~/.vim/.cocnvim_conf >> ~/Documents/git/dotfiles/.vimrc
+cat ~/Documents/git/dotfiles/.vim/.cocnvim_conf >> ~/Documents/git/dotfiles/.vimrc
 ########################################
 
 ########################################
