@@ -16,6 +16,7 @@ sudo apt-get install -y \
 # Configuiring git
 git config --global user.email $git_config_user_email
 git config --global user.name "rick"
+git config --global core.excludesFile '~/.gitignore'
 ########################################
 
 ########################################
