@@ -56,7 +56,7 @@ map <Leader>n :NERDTreeToggle<CR>
 nnoremap <leader>m :CtrlPTag<cr>
 
 " Clipboard for Mac OS X
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 

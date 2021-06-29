@@ -53,6 +53,8 @@ asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 asdf install nodejs 14.17.1
 asdf global nodejs 14.17.1
+
+yes | npm install nodemon ts-node -g
 #######################################
 
 ########################################
