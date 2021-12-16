@@ -9,7 +9,7 @@ sudo apt-get update
 sudo apt-get install -y \
   build-essential git curl zsh tmux arandr \
   cmake virtualbox ack-grep libssl-dev libreadline-dev \
-  zlib1g-dev xclip ripgrep neovim
+  zlib1g-dev xclip ripgrep neovim exuberant-ctags
 ########################################
 
 ########################################
