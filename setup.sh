@@ -89,6 +89,9 @@ nvim -c ":call coc#util#install()" -c ":q"
 nvim -c ":CocInstall coc-tsserver coc-json" -c ":q"
 
 cat ~/Documents/git/dotfiles/.vim/.cocnvim_conf >> ~/Documents/git/dotfiles/.vimrc
+
+# Set vim as default editor
+sudo update-alternatives --set editor /usr/bin/nvim
 ########################################
 
 ########################################
