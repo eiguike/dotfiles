@@ -52,6 +52,7 @@ set tags+=./tags;
 set nowrap
 set hlsearch
 
+map <Leader>r :NERDTreeFind<CR>
 map <Leader>n :NERDTreeToggle<CR>
 nnoremap <leader>m :CtrlPTag<cr>
 
