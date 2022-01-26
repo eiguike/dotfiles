@@ -12,6 +12,7 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/ludovicchabant/vim-gutentags.git'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'vim-ruby/vim-ruby'
 
 " fzf plugins
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -38,6 +39,9 @@ let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let g:NERDTreeDirArrows=0
+
+" Enable vim_ruby to fold Ruby code
+let ruby_fold=1
 
 set encoding=utf-8
 
