@@ -63,8 +63,11 @@ cd ~
 rm $(pwd)/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 rm $(pwd)/.config/xfce4/terminal/terminalrc
 
+# XFCE4 Configuration files
 ln -s $(pwd)/Documents/git/dotfiles/keyboards.xml $(pwd)/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml
 ln -s $(pwd)/Documents/git/dotfiles/xfce4-keyboard-shortcuts.xml $(pwd)/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+
+# Terminal Configuration files
 ln -s $(pwd)/Documents/git/dotfiles/terminalrc $(pwd)/.config/xfce4/terminal/terminalrc
 
 # Configuring vim

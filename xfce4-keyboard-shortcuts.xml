@@ -198,7 +198,7 @@
       <property name="&lt;Super&gt;Left" type="string" value="tile_left_key"/>
       <property name="&lt;Super&gt;Down" type="string" value="hide_window_key"/>
       <property name="&lt;Super&gt;Up" type="string" value="maximize_window_key"/>
-      <property name="&lt;Alt&gt;apostrophe" type="string" value="switch_window_key"/>
+      <property name="&lt;Alt&gt;dead_grave" type="string" value="switch_window_key"/>
     </property>
   </property>
   <property name="providers" type="array">
