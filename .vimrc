@@ -56,9 +56,8 @@ set tags+=./tags;
 set nowrap
 set hlsearch
 
-map <Leader>r :NERDTreeFind<CR>
-map <Leader>n :NERDTreeToggle<CR>
-nnoremap <leader>m :CtrlPTag<cr>
+nnoremap <Leader>r :NERDTreeFind<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " Clipboard for Mac OS X
 set clipboard+=unnamedplus
