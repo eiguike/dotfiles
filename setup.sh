@@ -46,8 +46,8 @@ echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zshrc
 
 # Installing asdf-ruby
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 3.0.1
-asdf global ruby 3.0.1
+asdf install ruby 3.1.4
+asdf global ruby 3.1.4
 
 # Installing asdf-node
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
