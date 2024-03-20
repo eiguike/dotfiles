@@ -8,7 +8,7 @@ read git_config_user_email
 sudo apt-get update
 sudo apt-get install -y \
   build-essential git curl zsh tmux arandr \
-  cmake virtualbox ack-grep libssl-dev libreadline-dev \
+  cmake ack-grep libssl-dev libreadline-dev \
   zlib1g-dev xclip ripgrep neovim exuberant-ctags libbz2-dev \
   libsqlite3-dev libffi-dev liblzma-dev libtk-img-dev
 ########################################
@@ -52,8 +52,8 @@ asdf global ruby 3.1.4
 # Installing asdf-node
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 14.17.1
-asdf global nodejs 14.17.1
+asdf install nodejs 16.20.0
+asdf global nodejs 16.20.0
 
 # Installing asdf-python
 asdf plugin-add python
@@ -65,6 +65,7 @@ asdf install python 3.12.0
 asdf global python 3.12.0
 
 yes | npm install nodemon ts-node -g
+yes | npm install nodemon yarn -g
 #######################################
 
 ########################################
