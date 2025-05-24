@@ -1,0 +1,28 @@
+{
+    "window.commandCenter": true,
+    "workbench.colorTheme": "Cursor Dark Midnight",
+    "editor.foldingImportsByDefault": true,
+    "editor.folding": true,
+    "editor.unfoldOnClickAfterEndOfLine": false,
+    "editor.showFoldingControls": "always",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k"
+            ]
+        }
+    ]
+}
