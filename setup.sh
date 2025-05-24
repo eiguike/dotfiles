@@ -162,6 +162,7 @@ install_nvim() {
   export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
   
   # Set vim as default editor
+  sudo update-alternatives --install /usr/bin/editor editor /opt/nvim-linux-x86_64/bin/nvim 1
   sudo update-alternatives --set editor /opt/nvim-linux-x86_64/bin/nvim
 }
 
