@@ -1,5 +1,21 @@
 [
     {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
         "key": "ctrl+i",
         "command": "composerMode.agent"
     },
@@ -61,5 +77,15 @@
     {
         "key": "ctrl+1",
         "command": "-workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
     }
 ]
