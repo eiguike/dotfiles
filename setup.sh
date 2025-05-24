@@ -33,6 +33,23 @@ echo "export PATH=\$PATH:\$GOROOT/bin" >> ~/.zshrc
 echo "export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'" >> ~/.zshrc
 
 #######################################
+# Setup cedilla key
+
+echo "GTK_IM_MODULE=cedilla" | sudo tee -a /etc/environment
+echo "Q_IM_MODULE=cedilla" | sudo tee -a /etc/environment
+
+cat > ~/.XCompose << EOF
+# UTF-8 (Unicode) compose sequences
+
+# Overrides C acute with Ccedilla:
+<dead_acute> <C> : "Ç" "Ccedilla"
+<dead_acute> <c> : "ç" "ccedilla"
+EOF
+
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule': <'ibus'>}"
+#######################################
+
+#######################################
 # Installing asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
